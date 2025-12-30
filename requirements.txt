@@ -4,6 +4,6 @@ scikit-learn
 numpy
 docx2txt
 PyPDF2
-gunicorn
+
 
 
