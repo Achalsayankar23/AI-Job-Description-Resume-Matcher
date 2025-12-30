@@ -1,9 +1,9 @@
 # AI Resume to Job Description Matcher
 
-## 📌 Overview
+## Overview
 This project is a Python-based AI-powered web application that matches resumes with job descriptions using Natural Language Processing (NLP) techniques.
 
-## 🚀 Features
+## Features
 - Resume parsing (PDF/DOCX)
 - Job description analysis
 - NLP text preprocessing
@@ -11,7 +11,7 @@ This project is a Python-based AI-powered web application that matches resumes w
 - Skill extraction
 - Flask-based web interface
 
-## 🛠️ Technologies Used
+## Technologies Used
 - Python
 - Flask
 - NLTK
@@ -19,4 +19,4 @@ This project is a Python-based AI-powered web application that matches resumes w
 - PyPDF2
 - HTML, CSS
 
-## 📂 Project Structure
+
