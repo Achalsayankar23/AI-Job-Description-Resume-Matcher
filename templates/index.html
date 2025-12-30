@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<form method="POST" enctype="multipart/form-data">
+    <h1>AI Resume Matcher</h1>
+
+    <textarea name="job_description" placeholder="Paste Job Description here..." required></textarea>
+
+    <label class="custom-file-upload">
+        Upload Resume
+        <input type="file" name="resume" accept=".pdf,.docx" required>
+    </label>
+
+    <button type="submit">Match Resume</button>
+</form>
+
+
+{% if score %}
+<div class="result-container">
+    <h2>Match Score: {{ score }}%</h2>
+    <h3>Skills Found:</h3>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+</body>
+
+</html>
