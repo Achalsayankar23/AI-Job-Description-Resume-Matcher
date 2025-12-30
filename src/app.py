@@ -5,10 +5,19 @@ from matcher import calculate_match
 from skills import extract_skills
 import os
 
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-UPLOAD_FOLDER = "../data/resumes"
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, "templates"),
+    static_folder=os.path.join(BASE_DIR, "static")
+)
+
+UPLOAD_FOLDER = os.path.join(BASE_DIR, "data", "resumes")
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -31,6 +40,7 @@ def index():
         skills = extract_skills(resume_text)
 
     return render_template("index.html", score=score, skills=skills)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
